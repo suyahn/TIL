@@ -105,7 +105,7 @@ year는 연도, month는 월, dayofmonth는 월별 일자, dayname은 요일을 
 
 ###date_format
 이런 형식으로 출력하려면,
-> '17/02/21 (PM)05:33:58 Tue'
+>17/02/21 (PM)05:33:58 Tue
 
     select date_format(now(), '%y/%m/%d (%p)%h:%i:%s %a');
 
