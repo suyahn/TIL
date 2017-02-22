@@ -29,7 +29,35 @@
 
 --------------------------
 
-#2. DCL (Data Control Language)
+#2. DDL (Data Definition Language)
+
+##create table
+
+    create table sawon (
+	     empno int primary key not null auto_increment,
+       ename varchar(20),
+       age int
+    );
+
+*auto_increment* 를 가진 column은 row가 삽입될 때 자동적으로 한 개씩 값이 증가한다. data가 null일 때도 column에 자동적으로 한 개씩 값이 증가하여 삽입된다.
+
+**Foreign Key** 설정은 oracle과 동일하다.
+
+*on delete cascade* 은 row를 삭제할 때 그 자식 row도 한꺼번에 삭제 된다. cascade 설정을 안하면 default는 restrict이다. restrict는 자식 row가 있는 경우 삭제 불가능.
+
+##alter table
+
+    alter table sawon modify ename varchar(40);
+
+위의 쿼리는 sawon table에서 ename이란 column의 자료형을 varchar(40)으로 변경하는 쿼리이다.
+
+    alter table sawon change ename name varchar(30);
+
+위의 쿼리는 sawon table에서 ename이란 column의 이름을 name으로 자료형을 varchar(30)으로 변경하는 쿼리이다.
+
+-------------------------
+
+#3. DCL (Data Control Language)
 
 ##권한 부여
 
@@ -45,7 +73,7 @@ with grant option을 받은 user는 그 권한을 다른 user에게 줄 수 있�
 
 -------------------------------
 
-#3. DML (Data Manipulation Language)
+#4. DML (Data Manipulation Language)
 
 ##스칼라 함수
 
@@ -164,3 +192,50 @@ index는 0부터!
     select ename, format(sal, 1) from emp;
 
 format을 안하면 *7000*으로 출력되는데 format(sal, 0)하면, *7,000*으로 출력된다.
+
+
+------------------------------------
+
+#5. Data 백업 및 복구
+
+##1) database 통째로
+
+**백업**
+
+    mysqldump -u root -p test > c:/mysql/test.txt
+
+cmd창에서 위의 명령을 실행하고 password를 입력하면, root user의 test database를 test.txt 파일에 통째로 백업시킨다.
+
+
+**복구**
+
+    mysql -u root -p test2 < c:/mysql/test.txt
+
+만약 test라는 database가 다 날라갔다면, 백업시켜놓은 text.txt를 다시 어떤 database에 복구하면 된다. 이 명령에선 test2라는 database에 복구하려 한다. 이 때, test2 database는 create 되어있어야 한다.
+
+
+##2) table만
+
+**백업**
+
+    mysqldump -u root -p world city > c:/mysql/city.txt
+
+world database에 있는 city table을 city.txt에 백업시키는 명령이다.
+
+
+**복구**
+
+    mysql -u root -p test < c:/mysql/city.txt
+
+백업시킨 city table을 test database에 복구하는 명령이다.
+
+
+##3) data만
+
+data가 외부에서 올 때, 주로 *,*(콤마)로 구분된 txt file이 오거나, cvs 엑셀파일이 온다. 이 때 data를 load하는 명령문은 다음과 같다.
+
+    load data local infile 'c:/mysql/sawon.csv' into table sawon
+    fields terminated by ','
+    lines terminated by '\r\n';
+
+여기서 *\r\n* 은 엔터를 말한다.
