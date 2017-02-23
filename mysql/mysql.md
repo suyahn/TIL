@@ -245,3 +245,23 @@ data가 외부에서 올 때, 주로 *,*(콤마)로 구분된 txt file이 오거
 ---------------------------------------
 
 #6. MySQL Procedure
+
+    drop procedure if exists dept_insert;
+    delimiter //
+    create procedure dept_insert (vdeptno int, vdname varchar(20), vloc varchar(20))
+    begin
+      insert into dept values (vdeptno, vdname, vloc);
+    end;
+    //
+    delimiter ;
+
+가장 위의 procedure를 drop하는 명령문은 mysql에서는 oracle과 달리 procedure를 create할 때 create or replace가 아니라 그냥 create만 하기 때문에 이미 있으면 create되지 않기 때문에 사용한다.
+
+delimiter //는 원래 명령문이 끝나는 건 ;(세미콜론)을 만나야 하는건데, //를 만나야 끝나는거라고 바꾼것이다. 그리고 end;하고서 //를 만나는 순간 procedure를 create하는 문장이 끝남을 인식한다. 그 후에 다시 원래대로 delimiter를 ;로 원위치 시킨다.
+
+
+실행시킬 때에 oracle에서는 exec였는데 mysql은 call로 호출한다.
+
+    call dept_insert(50, '호잇', '서울');
+
+이렇게 dept_insert procedure를 호출하면, 50부서가 dept table에 삽입된다.
