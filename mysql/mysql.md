@@ -235,6 +235,7 @@ world database에 있는 city table을 city.txt에 백업시키는 명령이다.
 data가 외부에서 올 때, 주로 *,*(콤마)로 구분된 txt file이 오거나, cvs 엑셀파일이 온다. 이 때 data를 load하는 명령문은 다음과 같다.
 
     load data local infile 'c:/mysql/sawon.csv' into table sawon
+    character set euckr
     fields terminated by ','
     lines terminated by '\r\n';
 
