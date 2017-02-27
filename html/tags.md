@@ -102,4 +102,229 @@ paragraph
 headline. 제목. 6단계. h1이 크기가 제일 크고, h6이 제일 크기가 작다.
 
 ##align
-left, right, center
+left, right, center, justify(여러 줄일때, 끝을 맞춰줌)
+
+
+----------------------------
+
+#<font>
+##face
+글꼴.
+
+    <font face="돋움">글꼴이 돋움체</font>
+
+##size
+글자의 크기(1단계~7단계). 7이 글자크기가 제일 크다.
+
+    <font size="5">글자크기가 5</font>
+
+크기를 상대적으로도 지정할 수 있다.
+
+    <font size="+3">글자크기를 +3</font><br>
+    <font size="-1">글자크기를 -1</font><br>
+
+##color
+글자의 색상.
+
+    <font color="red">글자색상이 빨간색</font><br>
+    <font color="#ffdede"글자색상이 핑크색</font><br>
+
+----------------------------
+
+#<basefont>
+html문서의 기본 글자 크기를 지정. 종료태그 없음. html의 기본 글씨 크기는 4이다. html5에서는 지원 안함.
+
+    <basefont size="6">
+
+----------------------------
+
+#글자에 장식효과를 주는 태그
+
+##<b>...</b>
+<strong>...</strong>
+
+글자를 굵게
+
+##<i>...</i>
+<em>...</em>
+
+이탤릭체
+
+##<u>...</u>
+밑줄
+
+##<sub>...</sub>
+아래첨자
+
+##<sup>...</sup>
+위첨자
+
+##<big>...</big>
+좀 더 크게
+
+##<small>...</small>
+좀 더 작게
+
+##<s>...</s>
+<strike>...</strike>
+
+취소선
+
+##<tt>...</tt>
+타자기 체. 가로 세로 비율이 고정되어 있는 글꼴.
+
+--------------
+
+#<blockquote>
+다른 글을 인용하는 경우 사용하는 태그.
+
+-------------
+
+#<address>
+주소나 연락처를 기술할 때 사용하는 태그. 이탤릭체로 표현된다.
+
+--------------
+
+#목록 태그
+
+- <ul> : unordered list
+- <ol> : ordered list
+- <dl> : definition list
+
+## <li>
+실제 list내용을 담는 태그. <li>태그는 <br>을 내포하고 있다.
+
+##<ul>
+unordered list
+
+###type
+disc(검은원. default), circle(흰 원), square(사각형)
+
+    <ul type="square">
+      <li>고양이</li>
+      <li>강아지</li>
+      <li>토끼</li>
+    </ul>
+
+##<ol>
+ordered list
+
+###type
+- 1 : 숫자(default). 1, 2, 3, ...
+- a : 영어 소문자. a, b, c, ...
+- A : 영어 대문자. A, B, C, ...
+- i : 소문자 로마 숫자. ⅰ, ⅱ, ⅲ, ...
+- I : 대문자 로마 숫자. Ⅰ, Ⅱ, Ⅲ, ...
+- disc : 검은 원
+- circle : 흰 원
+- square : 사각형
+
+###start
+type이 1, i, I인 경우 시작할 숫자를 지정할 수 있다. type이 a나 A인 경우에 start="2"하면, b나 B부터 시작한다.
+
+    <ol type="I" start="2">
+      <li>고양이</li>
+      <li>강아지</li>
+      <li>토끼</li>
+    </ol>
+
+결과로,
+
+    ⅱ. 고양이
+    ⅲ. 강아지
+    ⅳ. 토끼
+
+와 같이 출력된다.
+
+##<dl>
+definition list
+
+- <lh> : list head
+- <dt> : definition title. <br>내포.
+- <dd> : definition data. <br>내포.
+
+    <dl compact>
+      <dt>용어의 제목</dt>
+      <dd>용어의 의미</dd>
+    </dl>
+
+용어의 제목 옆에 용어의 설명이 바로 나오도록 줄바꿈을 안시키려면, compact 속성을 사용한다.
+
+--------------------
+
+#<img>
+
+##<img> 속성
+
+- src : 이미지 파일 경로
+- align : 이미지 정렬 방식(top/middle/bottom, left/right)
+- alt : 이미지 설명 문장
+- title : 이미지의 title
+- width : 폭
+- height : 높이
+- border : 이미지 두께
+- hspace : 좌우여백
+- vspace : 상하여백
+
+align의 top/middle/bottom은 글자가 그림의 어느위치에 놓일 것인가인데, left/right는 그림이 왼쪽이냐 오른쪽이냐를 지정하는 것이다.
+
+width나 height 중 하나만 지정하면 나머지는 그 비율에 맞게 되지만, 둘다 지정한 경우는 비율을 생각안하고 그 사이즈가 된다.
+
+------------------
+
+#하이퍼링크
+하이퍼링크(hyperlink) : 연결된 개체
+
+##<a> 속성
+
+- href : hyper reference의 약자. 하이퍼링크 연결로 이동하고자 하는 곳의 위치.
+- name : 하이퍼링크의 이름.
+- target : url이 보여질 위치.
+- title : 하이퍼링크에 대한 설명.
+
+*target="_blank"* 라고 지정하면 새로운 페이지를 열고 그 페이지에서 링크로 이동한다.
+
+##링크의 색상 지정
+
+    <body link="색상" vlink="색상" alink="색상">
+    ...
+    </body>
+
+link는 연결된 적이 없는 상태의 색상. vlink는 한번이라도 방문한 상태의 색상. alink는 마우스로 누르고 있는 상태의 색상.
+
+-----------------
+
+#<table>
+
+##<table> 속성
+
+- border : 그냥 table을 작성하면 테두리가 표시되지 않기 때문에, border 속성을 사용해야 한다.
+
+    <table border="1">
+    ...
+    </table>
+
+- align : 테이블 정렬 방식(테이블 전체의 위치)
+- width : 너비(숫자 or 퍼센트)
+- height : 높이
+- cellpadding : 셀 테두리와 내용 사이의 간격
+- cellspacing : 셀과 셀 사이의 경계 간격
+- background : 배경이미지
+- bgcolor : 색상
+- bordercolor : 테두리 색상(default는 회색)
+
+##<caption>
+테이블의 제목 표시.
+
+    <caption align="top">...</caption>
+
+테이블 위에 제목을 쓰려면 top을, 아래에 쓰려면 bottom으로 지정.
+
+##<tr>
+table row.
+
+##<th>
+table header. 굵은 글씨와 가운데 정렬
+
+##<td>
+table data.
