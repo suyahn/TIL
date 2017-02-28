@@ -267,6 +267,7 @@ definition list
 - dt 태그 : definition title. <br>내포.
 - dd 태그 : definition data. <br>내포.
 
+
     <dl compact>
       <dt>용어의 제목</dt>
       <dd>용어의 의미</dd>
@@ -322,6 +323,10 @@ link는 연결된 적이 없는 상태의 색상. vlink는 한번이라도 방�
 
 ##table 태그 속성
 
+    <table border="1">
+    ...
+    </table>
+
 - border : 그냥 table을 작성하면 테두리가 표시되지 않기 때문에, border 속성을 사용해야 한다.
 - align : 테이블 정렬 방식(테이블 전체의 위치)
 - width : 너비(숫자 or 퍼센트)
@@ -331,10 +336,6 @@ link는 연결된 적이 없는 상태의 색상. vlink는 한번이라도 방�
 - background : 배경이미지
 - bgcolor : 색상
 - bordercolor : 테두리 색상(default는 회색)
-
-    <table border="1">
-    ...
-    </table>
 
 ##caption 태그
 테이블의 제목 표시.
