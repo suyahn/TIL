@@ -17,7 +17,7 @@
 
 ---------------------
 
-#<body> 태그에 사용되는 속성
+#body 태그에 사용되는 속성
 
 ##bgcolor
 
@@ -40,12 +40,12 @@ color의 이름을 직접 적을수도 있고,
 
 ---------------------
 
-#<br>
+#br 태그
 줄바꿈.
 
 ---------------------
 
-#<p>
+#p 태그
 paragraph
 
 ##align
@@ -56,39 +56,39 @@ paragraph
 
 ---------------------
 
-#<br>과 <p>의 차이
-<br>은 단순히 줄바꿈을 위한 태그이므로 여러 번 적으면 그 횟수만큼 줄바꿈이 이루어지지만, <p>를 여러 번 적으면 이미 하나의 문단을 구성하였다고 인식하기 때문에 나머지 <p>에 대해서는 무시해버린다.
+#br과 p의 차이
+br은 단순히 줄바꿈을 위한 태그이므로 여러 번 적으면 그 횟수만큼 줄바꿈이 이루어지지만, p를 여러 번 적으면 이미 하나의 문단을 구성하였다고 인식하기 때문에 나머지 p에 대해서는 무시해버린다.
 
 ---------------------
 
-#<div>
+#div 태그
 한 행 모두가 그 영역에 해당된다.
 
     <div style="background-color:red">텍스트</div>
 
 ---------------------
 
-#<span>
+#span 태그
 글자 크기만큼이 그 영역에 해당된다.
 
     <span style="background-color:red">텍스트</span>
 
 ---------------------
 
-#&nbsp;
+#&nbsp
 스페이스
 
 ---------------------
 
-#<pre>
-원하는 곳에 지정한 문장을 배치하고 싶을 때. html문서에서 쓴 그대로 문장이 쓰여진다. <pre>태그 안에서 다른 태그는 사용하지 않아야 한다. *html5에서는 지원하지 않는다.*
+#pre 태그
+원하는 곳에 지정한 문장을 배치하고 싶을 때. html문서에서 쓴 그대로 문장이 쓰여진다. pre 태그 안에서 다른 태그는 사용하지 않아야 한다. *html5에서는 지원하지 않는다.*
 
 ---------------------
 
-#<hr>
+#hr 태그
 구분선. horizontal ruler
 
-##<hr> 속성
+##hr 태그 속성
 
 - width : 너비(비율, 픽셀수)
 - size : 선의 두께(픽셀수)
@@ -98,7 +98,7 @@ paragraph
 
 ---------------------
 
-#<hn>
+#hn 태그
 headline. 제목. 6단계. h1이 크기가 제일 크고, h6이 제일 크기가 작다.
 
 ##align
@@ -107,7 +107,7 @@ left, right, center, justify(여러 줄일때, 끝을 맞춰줌)
 
 ----------------------------
 
-#<font>
+#font 태그
 ##face
 글꼴.
 
@@ -131,7 +131,7 @@ left, right, center, justify(여러 줄일때, 끝을 맞춰줌)
 
 ----------------------------
 
-#<basefont>
+#basefont 태그
 html문서의 기본 글자 크기를 지정. 종료태그 없음. html의 기본 글씨 크기는 4이다. html5에서는 지원 안함.
 
     <basefont size="6">
@@ -140,61 +140,85 @@ html문서의 기본 글자 크기를 지정. 종료태그 없음. html의 기�
 
 #글자에 장식효과를 주는 태그
 
-##<b>...</b>
-<strong>...</strong>
+##b 태그
+
+    <b>...</b>
+    <strong>...</strong>
 
 글자를 굵게
 
-##<i>...</i>
-<em>...</em>
+##i 태그
+
+    <i>...</i>
+    <em>...</em>
 
 이탤릭체
 
-##<u>...</u>
+##u 태그
+
+    <u>...</u>
+
 밑줄
 
-##<sub>...</sub>
+##sub 태그
+
+    <sub>...</sub>
+
 아래첨자
 
-##<sup>...</sup>
+##sup 태그
+
+    <sup>...</sup>
+
 위첨자
 
-##<big>...</big>
+##big 태그
+
+    <big>...</big>
+
 좀 더 크게
 
-##<small>...</small>
+##small 태그
+
+    <small>...</small>
+
 좀 더 작게
 
-##<s>...</s>
-<strike>...</strike>
+##s 태그
+
+    <s>...</s>
+    <strike>...</strike>
 
 취소선
 
-##<tt>...</tt>
+##tt 태그
+
+    <tt>...</tt>
+
 타자기 체. 가로 세로 비율이 고정되어 있는 글꼴.
 
 --------------
 
-#<blockquote>
+#blockquote 태그
 다른 글을 인용하는 경우 사용하는 태그.
 
 -------------
 
-#<address>
+#address 태그
 주소나 연락처를 기술할 때 사용하는 태그. 이탤릭체로 표현된다.
 
 --------------
 
 #목록 태그
 
-- <ul> : unordered list
-- <ol> : ordered list
-- <dl> : definition list
+- ul 태그 : unordered list
+- ol 태그 : ordered list
+- dl 태그 : definition list
 
-## <li>
-실제 list내용을 담는 태그. <li>태그는 <br>을 내포하고 있다.
+##li 태그
+실제 list내용을 담는 태그. li 태그는 br 태그를 내포하고 있다.
 
-##<ul>
+##ul 태그
 unordered list
 
 ###type
@@ -206,7 +230,7 @@ disc(검은원. default), circle(흰 원), square(사각형)
       <li>토끼</li>
     </ul>
 
-##<ol>
+##ol 태그
 ordered list
 
 ###type
@@ -236,12 +260,12 @@ type이 1, i, I인 경우 시작할 숫자를 지정할 수 있다. type이 a나
 
 와 같이 출력된다.
 
-##<dl>
+##dl 태그
 definition list
 
-- <lh> : list head
-- <dt> : definition title. <br>내포.
-- <dd> : definition data. <br>내포.
+- lh 태그 : list head
+- dt 태그 : definition title. <br>내포.
+- dd 태그 : definition data. <br>내포.
 
     <dl compact>
       <dt>용어의 제목</dt>
@@ -252,9 +276,9 @@ definition list
 
 --------------------
 
-#<img>
+#img 태그
 
-##<img> 속성
+##img 속성
 
 - src : 이미지 파일 경로
 - align : 이미지 정렬 방식(top/middle/bottom, left/right)
@@ -275,7 +299,7 @@ width나 height 중 하나만 지정하면 나머지는 그 비율에 맞게 되
 #하이퍼링크
 하이퍼링크(hyperlink) : 연결된 개체
 
-##<a> 속성
+##a 태그 속성
 
 - href : hyper reference의 약자. 하이퍼링크 연결로 이동하고자 하는 곳의 위치.
 - name : 하이퍼링크의 이름.
@@ -294,9 +318,9 @@ link는 연결된 적이 없는 상태의 색상. vlink는 한번이라도 방�
 
 -----------------
 
-#<table>
+#table 태그
 
-##<table> 속성
+##table 태그 속성
 
 - border : 그냥 table을 작성하면 테두리가 표시되지 않기 때문에, border 속성을 사용해야 한다.
 
@@ -313,18 +337,18 @@ link는 연결된 적이 없는 상태의 색상. vlink는 한번이라도 방�
 - bgcolor : 색상
 - bordercolor : 테두리 색상(default는 회색)
 
-##<caption>
+##caption 태그
 테이블의 제목 표시.
 
     <caption align="top">...</caption>
 
 테이블 위에 제목을 쓰려면 top을, 아래에 쓰려면 bottom으로 지정.
 
-##<tr>
+##tr 태그
 table row.
 
-##<th>
+##th 태그
 table header. 굵은 글씨와 가운데 정렬
 
-##<td>
+##td 태그
 table data.
