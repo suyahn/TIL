@@ -31,7 +31,8 @@ selector는 스타일 적용 대상. 주로 tag들.
 - link는 외부 css파일에 존재하는 스타일시트 파일을 html에 삽입하는 방식
 - inline은 html문서의 태그에서 직접 스타일을 설정하는 방식.
 
+아래처럼 쓰는 건 inline방식이다.
+
     <h1 style="font-size: 10px; background: yellow;">대박</h1>
 
-이렇게 쓰는건 inline방식이다.
 만약 embedding방식과 inline방식 두가지가 섞여 있다면, inline방식이 우선순위가 높다.
