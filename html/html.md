@@ -267,13 +267,12 @@ definition list
 - dt 태그 : definition title. <br>내포.
 - dd 태그 : definition data. <br>내포.
 
+만약, 용어의 제목 옆에 용어의 설명이 바로 나오도록 줄바꿈을 안시키려면, compact 속성을 사용한다.
 
     <dl compact>
       <dt>용어의 제목</dt>
       <dd>용어의 의미</dd>
     </dl>
-
-용어의 제목 옆에 용어의 설명이 바로 나오도록 줄바꿈을 안시키려면, compact 속성을 사용한다.
 
 --------------------
 
@@ -347,8 +346,25 @@ link는 연결된 적이 없는 상태의 색상. vlink는 한번이라도 방�
 ##tr 태그
 table row.
 
+**tr 태그의 속성**
+- align : left(default)/right/center
+- width
+- height
+- bgcolor
+- background
+
 ##th 태그
 table header. 굵은 글씨와 가운데 정렬
 
 ##td 태그
 table data.
+
+**td 태그의 속성**
+- valign : top/middle(default)/bottom
+- align : left(default)/right/center
+- width
+- height
+- bgcolor
+- background
+- rowspan : 행합치기
+- colspan : 열합치기
